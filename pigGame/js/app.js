@@ -15,8 +15,6 @@ playerToScore = [{'scoreOfPlayer_1' : 0}, {'scoreOfPlayer_2' : 0}];
 roundScore = 0;
 activePlayer = 1;
 
-dice = Math.floor(Math.random() * 6) + 1;
-
 document.querySelector('#current-' + activePlayer).textContent = dice;
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
 
@@ -25,6 +23,18 @@ console.log(x);
 
 document.querySelector('.dice').style.display = 'none';
 
+document.getElementById('score-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-1').textContent = '0';
+document.getElementById('current-1').textContent = '0';
+
+document.querySelector('.btn-roll').addEventListener('click', function () {
+    dice = Math.floor(Math.random() * 6) + 1;
+    let diceDOM = document.querySelector('.dice')
+    document.querySelector('.dice').style.display = 'block';
+    diceDOM.src = 'pictures/dice-' + dice + '.png';
+
+});
 
 
 /*
